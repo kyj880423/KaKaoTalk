@@ -4,8 +4,8 @@ Example)
 
 
 
+--톡내용을 모두 출력
 
-  //톡내용을 모두 출력
 void talkPrintTest() throws URISyntaxException {
 	var t = new TalkTextApi(new File(TalkTextFileTest.class.getResource("KakaoTalk.txt").toURI()));
 	t.setTalkContentHandler(new TalkContentHandler() {
@@ -19,8 +19,10 @@ void talkPrintTest() throws URISyntaxException {
 	t.parse();
 }
 
-//톡 내용이 많은 사용자 출력 및 대화내용출력
-void talkAggregateHandlerTest() throws URISyntaxException {
+--톡 내용이 많은 사용자 출력 및 대화내용출력
+<code>
+void talkAggregateHandlerTest() throws URISyntaxException 
+{
 	var t = new TalkTextApi(new File(TalkTextFileTest.class.getResource("KakaoTalk.txt").toURI()));
 	TalkAggregateHandler talkContentHandler = new TalkAggregateHandler();
 	t.setTalkContentHandler(talkContentHandler);
@@ -37,3 +39,4 @@ void talkAggregateHandlerTest() throws URISyntaxException {
 	System.out.println("#########################################");
 	talkContentHandler.getUserTalks("쪼돼지").forEach(System.out::println);
 }
+</code>
